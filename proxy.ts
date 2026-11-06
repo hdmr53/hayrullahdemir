@@ -1,36 +1,19 @@
 
 import { NextRequest, NextResponse } from "next/server";
 
-const locales = ["tr", "en"];
-
-function getPreferredLocale(request: NextRequest) {
-  const acceptLanguage = request.headers.get("accept-language");
-
-  if (acceptLanguage?.toLowerCase().includes("tr")) {
-    return "tr";
-  }
-
-  return "en";
-}
-
 export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  const hasLocale = locales.some(
-    (locale) =>
-      pathname === `/${locale}` ||
-      pathname.startsWith(`/${locale}/`)
-  );
-
-  if (hasLocale) {
-    return NextResponse.next();
+  if (pathname === "/tr") {
+    return NextResponse.redirect(new URL("/", request.url));
   }
 
-  const locale = getPreferredLocale(request);
+  if (pathname.startsWith("/tr/")) {
+    const newPath = pathname.replace(/^\/tr/, "");
+    return NextResponse.redirect(new URL(newPath, request.url));
+  }
 
-  return NextResponse.redirect(
-    new URL(`/${locale}${pathname}`, request.url)
-  );
+  return NextResponse.next();
 }
 
 export const config = {

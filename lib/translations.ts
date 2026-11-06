@@ -15,6 +15,16 @@ export const translations = {
       projectsButton: "Projelerimi keşfet",
       contactButton: "Benimle iletişime geç",
     },
+    about: {
+      label: "HAKKIMDA",
+      title: "Kısaca ben.",
+      paragraph1:
+      "Medipol Üniversitesi'nde İngilizce Yönetim Bilişim Sistemleri 2. sınıf öğrencisiyim. Yazılım geliştirme ve topluluk yönetimiyle ilgileniyorum.",
+      paragraph2:
+      "Yazılım tarafında özellikle C# ve .NET üzerine çalışıyorum. Öğrendiklerimi kendi projelerimde uygulamayı ve zamanla daha kapsamlı projeler geliştirmeyi hedefliyorum.",
+      paragraph3:
+      "Topluluk yönetimi tarafında ise yaklaşık 3 yıl boyunca Agar.live'da adminlik yaptım. Bu süreçte topluluk yönetimi, ekip koordinasyonu, kullanıcı iletişimi ve organizasyon konularında deneyim kazandım.",
+    },
     portfolio: {
       label: "PORTFÖY",
       title: "Öne Çıkan Projeler",
@@ -46,6 +56,16 @@ export const translations = {
         "I'm a Management Information Systems student interested in backend development, software engineering, and building useful digital products.",
       projectsButton: "Explore my projects",
       contactButton: "Get in touch",
+    },
+    about: {
+      label: "ABOUT ME",
+      title: "A little about me.",
+      paragraph1:
+      "I'm a second-year English-taught Management Information Systems student at Istanbul Medipol University. I'm interested in both software development and community management.",
+       paragraph2:
+      "On the software side, I'm currently focusing on C# and .NET. I enjoy applying what I learn to personal projects and working towards building more advanced applications.",
+       paragraph3:
+       "When it comes to community management, I spent around three years as an admin at Agar.live. During that time, I gained experience in managing communities, coordinating teams, communicating with users, and organizing activities.",
     },
     portfolio: {
       label: "PORTFOLIO",
