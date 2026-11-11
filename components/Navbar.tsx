@@ -3,6 +3,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/translations";
 
 type NavbarProps = {
@@ -15,6 +16,7 @@ export default function Navbar({
   currentPath = "",
 }: NavbarProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const basePath = locale === "en" ? "/en" : "";
   const homePath = basePath || "/";
@@ -25,39 +27,56 @@ export default function Navbar({
       : `/${currentPath}`
     : "";
 
-  const trPath = normalizedPath;
+  const trPath = normalizedPath || "/";
   const enPath = `/en${normalizedPath}`;
+
+  const links = [
+    {
+      label: locale === "tr" ? "Anasayfa" : "Home",
+      href: homePath,
+    },
+    {
+      label: locale === "tr" ? "Hakkımda" : "About",
+      href: `${basePath}/about`,
+    },
+    {
+      label: locale === "tr" ? "Projeler" : "Projects",
+      href: `${basePath}/projects`,
+    },
+    {
+      label: locale === "tr" ? "Beceriler" : "Skills",
+      href: `${basePath}/skills`,
+    },
+    {
+      label: locale === "tr" ? "İletişim" : "Contact",
+      href: `${basePath}/contact`,
+    },
+  ];
+
+  const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="relative mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-7">
-      <Link
-        href={homePath}
-        className="text-xl font-bold tracking-tight"
-      >
-        Hayrullah<span className="text-blue-500">.</span>
+      {/* Logo */}
+      <Link href={homePath} className="text-xl font-bold tracking-tight">
+        HDMR<span className="text-blue-500"></span>
       </Link>
 
       {/* Desktop navigation */}
-      <div className="hidden items-center gap-8 text-sm text-gray-400 md:flex">
-        <Link href={homePath} className="transition hover:text-white">
-          {locale === "tr" ? "Anasayfa" : "Home"}
-        </Link>
-
-        <Link href={`${basePath}/about`} className="transition hover:text-white">
-          {locale === "tr" ? "Hakkımda" : "About"}
-        </Link>
-
-        <Link href={`${homePath}#projects`} className="transition hover:text-white">
-          {locale === "tr" ? "Projeler" : "Projects"}
-        </Link>
-
-        <Link href={`${homePath}#skills`} className="transition hover:text-white">
-          {locale === "tr" ? "Beceriler" : "Skills"}
-        </Link>
-
-        <Link href={`${homePath}#contact`} className="transition hover:text-white">
-          {locale === "tr" ? "İletişim" : "Contact"}
-        </Link>
+      <div className="hidden items-center gap-8 text-sm md:flex">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={`transition ${
+              isActive(link.href)
+                ? "text-blue-400"
+                : "text-gray-400 hover:text-white"
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
 
       {/* Right side: mobile menu + language */}
@@ -73,7 +92,7 @@ export default function Navbar({
 
         <div className="flex items-center gap-3 text-sm font-semibold">
           <Link
-            href={trPath || "/"}
+            href={trPath}
             className={
               locale === "tr"
                 ? "text-blue-400"
@@ -86,7 +105,7 @@ export default function Navbar({
           <span className="text-gray-700">/</span>
 
           <Link
-            href={enPath || "/en"}
+            href={enPath}
             className={
               locale === "en"
                 ? "text-blue-400"
@@ -101,26 +120,21 @@ export default function Navbar({
       {/* Mobile navigation */}
       {isMenuOpen && (
         <div className="absolute left-0 top-full z-50 w-full border-t border-white/10 bg-[#080b12] px-6 py-6 md:hidden">
-          <div className="flex flex-col gap-5 text-sm text-gray-300">
-            <Link href={homePath} onClick={() => setIsMenuOpen(false)}>
-              {locale === "tr" ? "Anasayfa" : "Home"}
-            </Link>
-
-            <Link href={`${basePath}/about`} onClick={() => setIsMenuOpen(false)}>
-              {locale === "tr" ? "Hakkımda" : "About"}
-            </Link>
-
-            <Link href={`${homePath}#projects`} onClick={() => setIsMenuOpen(false)}>
-              {locale === "tr" ? "Projeler" : "Projects"}
-            </Link>
-
-            <Link href={`${homePath}#skills`} onClick={() => setIsMenuOpen(false)}>
-              {locale === "tr" ? "Beceriler" : "Skills"}
-            </Link>
-
-            <Link href={`${homePath}#contact`} onClick={() => setIsMenuOpen(false)}>
-              {locale === "tr" ? "İletişim" : "Contact"}
-            </Link>
+          <div className="flex flex-col gap-5 text-sm">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className={
+                  isActive(link.href)
+                    ? "text-blue-400"
+                    : "text-gray-400 hover:text-white"
+                }
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}
