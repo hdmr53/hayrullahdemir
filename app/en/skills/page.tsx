@@ -2,6 +2,20 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Skills | C#, .NET, Python & Community Management",
+  description:
+    "Explore Hayrullah Demir's technical and professional skills, including C#, .NET, Python, Git, GitHub and digital community management.",
+  alternates: {
+    canonical: "/en/skills",
+    languages: {
+      tr: "/skills",
+      en: "/en/skills",
+    },
+  },
+};
 
 const skillGroups = [
   {

@@ -3,8 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
 
 export const instant = false;
+
+export const metadata: Metadata = {
+  title: "About Me",
+  description:
+    "Learn more about Hayrullah Demir, a Management Information Systems student interested in software development and digital community management.",
+  alternates: {
+    canonical: "/en/about",
+    languages: {
+      tr: "/about",
+      en: "/en/about",
+    },
+  },
+};
 
 export default function AboutPage() {
   return (

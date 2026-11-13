@@ -33,14 +33,6 @@ export const metadata: Metadata = {
   creator: "Hayrullah Demir",
   publisher: "Hayrullah Demir",
 
-  alternates: {
-    canonical: "/",
-    languages: {
-      tr: "/",
-      en: "/en",
-    },
-  },
-
   openGraph: {
     type: "website",
     locale: "tr_TR",

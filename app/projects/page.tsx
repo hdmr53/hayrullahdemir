@@ -2,6 +2,20 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Projelerim | Yazılım Geliştirme Çalışmalarım",
+    description:
+        "Hayrullah Demir'in yazılım projelerini keşfedin. Kişisel portfolyo, C#, .NET, Python ve web geliştirme çalışmaları.",
+    alternates: {
+        canonical: "/projects",
+        languages: {
+            tr: "/projects",
+            en: "/en/projects",
+        },
+    },
+};
 
 export default function ProjectsPage() {
     return (

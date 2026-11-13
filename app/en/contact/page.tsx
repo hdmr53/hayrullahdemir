@@ -2,8 +2,22 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
 
 const email = "hayrullahdemiriletisim@gmail.com";
+
+export const metadata: Metadata = {
+  title: "Contact | Hayrullah Demir",
+  description:
+    "Contact Hayrullah Demir for software development projects, digital community management and professional collaborations. Find email, GitHub and LinkedIn details.",
+  alternates: {
+    canonical: "/en/contact",
+    languages: {
+      tr: "/contact",
+      en: "/en/contact",
+    },
+  },
+};
 
 const contactLinks = [
   {
