@@ -42,7 +42,7 @@ export default function ProjectsPage() {
                             </div>
 
                             <h2 className="mb-3 text-2xl font-semibold">
-                                hayrullahdemir.me
+                                hayrullahdemir.com.tr
                             </h2>
 
                             <p className="mb-6 leading-7 text-gray-400">

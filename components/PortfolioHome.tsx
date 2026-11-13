@@ -217,7 +217,7 @@ export default function PortfolioHome({ locale }: PortfolioHomeProps) {
               </span>
             </div>
 
-            <h3 className="mt-7 text-2xl font-bold">Hayrullahdemir.me</h3>
+            <h3 className="mt-7 text-2xl font-bold">Hayrullahdemir.com.tr</h3>
 
             <p className="mt-4 max-w-3xl leading-7 text-gray-400">
               {isTr

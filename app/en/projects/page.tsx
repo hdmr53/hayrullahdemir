@@ -15,12 +15,12 @@ export default function ProjectsPage() {
                         </p>
 
                         <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
-                            Projects I've <span className="text-blue-400">built.</span>
+                            Projects I&apos;ve <span className="text-blue-400">built.</span>
                         </h1>
 
                         <p className="max-w-2xl text-lg leading-8 text-gray-400">
                             Here you can explore my projects, the technologies I use,
-                            and the work I'm developing.
+                            and the work I&apos;m developing.
                         </p>
                     </div>
                 </Reveal>
@@ -42,7 +42,7 @@ export default function ProjectsPage() {
                             </div>
 
                             <h2 className="mb-3 text-2xl font-semibold">
-                                hayrullahdemir.me
+                                hayrullahdemir.com.tr
                             </h2>
 
                             <p className="mb-6 leading-7 text-gray-400">

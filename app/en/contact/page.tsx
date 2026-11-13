@@ -49,12 +49,12 @@ export default function ContactPage() {
             </p>
 
             <h1 className="mb-6 text-4xl font-bold tracking-tight md:text-6xl">
-              Let's get in <span className="text-blue-400">touch.</span>
+              Let&apos;s get in <span className="text-blue-400">touch.</span>
             </h1>
 
             <p className="max-w-2xl text-lg leading-8 text-gray-400">
               Feel free to reach out for projects, collaborations,
-              or simply exchanging ideas. I'd be happy to hear from you.
+              or simply exchanging ideas. I&apos;d be happy to hear from you.
             </p>
           </div>
         </Reveal>
@@ -106,7 +106,7 @@ export default function ContactPage() {
             <div className="flex flex-col justify-between rounded-2xl border border-blue-500/20 bg-blue-500/[0.05] p-8 md:p-10">
               <div>
                 <p className="mb-5 text-sm font-semibold tracking-widest text-blue-400">
-                  LET'S WORK TOGETHER
+                  LET&apos;S WORK TOGETHER
                 </p>
 
                 <h2 className="mb-5 text-3xl font-bold">

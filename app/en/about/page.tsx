@@ -70,7 +70,7 @@ export default function AboutPage() {
               </p>
 
               <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-                Hi, I'm{" "}
+                Hi, I&apos;m{" "}
                 <span className="text-blue-400">Hayrullah</span>
               </h1>
 
@@ -82,8 +82,8 @@ export default function AboutPage() {
 
               <div className="mt-7 space-y-5 text-base leading-8 text-gray-400">
                 <p>
-                  I'm a second-year Management Information Systems
-                  student. I'm interested in technology, software
+                  I&apos;m a second-year Management Information Systems
+                  student. I&apos;m interested in technology, software
                   development, and digital communities that bring
                   people together.
                 </p>
@@ -98,7 +98,7 @@ export default function AboutPage() {
                 <p>
                   Software development is just as important to me
                   as community management. Through my experience
-                  with digital communities, I've had the opportunity
+                  with digital communities, I&apos;ve had the opportunity
                   to develop my skills in team coordination,
                   moderation and user experience.
                 </p>
@@ -169,7 +169,7 @@ export default function AboutPage() {
                   </div>
 
                   <span className="w-fit rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-2 text-sm text-blue-400">
-                    Bachelor's Degree
+                    Bachelor&apos;s Degree
                   </span>
                 </div>
 
@@ -236,7 +236,7 @@ export default function AboutPage() {
               </p>
 
               <h2 className="mt-4 text-3xl font-bold md:text-4xl">
-                Areas I'm Interested In
+                Areas I&apos;m Interested In
               </h2>
 
               <div className="mt-10 grid gap-6 md:grid-cols-2">
@@ -268,7 +268,7 @@ export default function AboutPage() {
                   </h3>
 
                   <p className="mt-4 leading-7 text-gray-400">
-                    I'm interested in digital community management,
+                    I&apos;m interested in digital community management,
                     moderation, team coordination and improving
                     the overall community experience.
                   </p>

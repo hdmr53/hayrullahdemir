@@ -86,7 +86,7 @@ export default function SkillsPage() {
 
             <p className="max-w-2xl text-lg leading-8 text-gray-400">
               Explore the technologies I use in software development and
-              the professional skills I've developed through managing
+              the professional skills I&apos;ve developed through managing
               digital communities.
             </p>
           </div>
