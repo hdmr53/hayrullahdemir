@@ -1,7 +1,7 @@
 
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://hayrullahdemir.me";
+const siteUrl = "https://hayrullahdemir.com.tr";
 
 const pages = [
   "",

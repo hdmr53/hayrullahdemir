@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://hayrullahdemir.me/sitemap.xml",
+    sitemap: "https://hayrullahdemir.com.tr/sitemap.xml",
   };
 }
