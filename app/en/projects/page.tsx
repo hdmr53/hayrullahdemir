@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function ProjectsPage() {
     return (
         <main className="min-h-screen bg-[#080b12] text-white">
             <Navbar locale="en" currentPath="projects" />
+
             <section className="mx-auto max-w-6xl px-6 py-20">
                 <Reveal>
                     <div className="mb-16">
@@ -33,8 +35,7 @@ export default function ProjectsPage() {
                         </h1>
 
                         <p className="max-w-2xl text-lg leading-8 text-gray-400">
-                            Here you can explore my projects, the technologies I use,
-                            and the work I&apos;m developing.
+                            A selection of my projects, the technologies I use, and what I&apos;ve been working on.
                         </p>
                     </div>
                 </Reveal>
@@ -49,10 +50,14 @@ export default function ProjectsPage() {
                                 <span className="text-sm text-gray-500">2026</span>
                             </div>
 
-                            <div className="mb-6 flex h-40 items-center justify-center rounded-xl border border-white/10 bg-[#0d1422]">
-                                <span className="text-4xl font-bold tracking-tight">
-                                    My Portfolio <span className="text-blue-400">Website.</span>
-                                </span>
+                            <div className="relative mb-6 h-56 overflow-hidden rounded-xl border border-white/10 bg-[#0d1422]">
+                                <Image
+                                    src="/portfolio-preview.png"
+                                    alt="Hayrullah Demir's personal portfolio website"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover object-top transition duration-500 group-hover:scale-105"
+                                />
                             </div>
 
                             <h2 className="mb-3 text-2xl font-semibold">
@@ -60,8 +65,7 @@ export default function ProjectsPage() {
                             </h2>
 
                             <p className="mb-6 leading-7 text-gray-400">
-                                A personal portfolio website built to showcase my background,
-                                projects, and skills. It supports both Turkish and English.
+                                A personal website built to showcase my work and projects, share my technical skills, and document my journey in software development.
                             </p>
 
                             <div className="mb-8 flex flex-wrap gap-2">

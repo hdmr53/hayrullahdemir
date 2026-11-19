@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -49,10 +50,14 @@ export default function ProjectsPage() {
                                 <span className="text-sm text-gray-500">2026</span>
                             </div>
 
-                            <div className="mb-6 flex h-40 items-center justify-center rounded-xl border border-white/10 bg-[#0d1422]">
-                                <span className="text-4xl font-bold tracking-tight">
-                                    Web Site <span className="text-blue-400">Projem.</span>
-                                </span>
+                            <div className="relative mb-6 h-56 overflow-hidden rounded-xl border border-white/10 bg-[#0d1422]">
+                                <Image
+                                    src="/portfolio-preview.png"
+                                    alt="Hayrullah Demir kişisel portfolyo web sitesi"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                    className="object-cover object-top transition duration-500 group-hover:scale-105"
+                                />
                             </div>
 
                             <h2 className="mb-3 text-2xl font-semibold">
@@ -60,9 +65,7 @@ export default function ProjectsPage() {
                             </h2>
 
                             <p className="mb-6 leading-7 text-gray-400">
-                                Kendimi, projelerimi ve yetkinliklerimi tanıtmak için
-                                geliştirdiğim kişisel portfolyo web sitesi. Türkçe ve
-                                İngilizce dil desteğiyle tasarlıyorum.
+                                Kendimi ve çalışmalarımı tanıtmak için geliştirdiğim kişisel web sitesi. Projelerimi, teknik becerilerimi ve yazılım alanındaki gelişimimi paylaştığım bir platform.
                             </p>
 
                             <div className="mb-8 flex flex-wrap gap-2">

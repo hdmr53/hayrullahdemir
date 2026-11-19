@@ -2,7 +2,9 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Reveal from "@/components/Reveal";
+import Image from "next/image";
 import type { Locale } from "@/lib/translations";
+
 
 type PortfolioHomeProps = {
   locale: Locale;
@@ -16,10 +18,9 @@ export default function PortfolioHome({ locale }: PortfolioHomeProps) {
     "C#",
     ".NET",
     "Python",
+    "JavaScript",
     "Git",
     "GitHub",
-    "Team Leadership",
-    "Community Management",
   ];
 
   const technologies = ["Next.js", "React", "TypeScript", "Tailwind CSS"];
@@ -47,14 +48,23 @@ export default function PortfolioHome({ locale }: PortfolioHomeProps) {
           </h1>
 
           <h2 className="mt-7 text-xl font-medium text-gray-300 md:text-2xl">
-            Software Developer <span className="text-blue-500">&amp;</span>{" "}
-            Community Manager
+            {isTr ? (
+              <>
+                Yazılım Geliştirici <span className="text-blue-500">&amp;</span>{" "}
+                Topluluk Yöneticisi
+              </>
+            ) : (
+              <>
+                Software Developer <span className="text-blue-500">&amp;</span>{" "}
+                Community Manager
+              </>
+            )}
           </h2>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-gray-400">
             {isTr
-              ? "Yazılım geliştirmeyi, yeni şeyler öğrenmeyi ve fikirlerimi projelere dönüştürmeyi seviyorum. Aynı zamanda dijital toplulukların yönetimi ve geliştirilmesiyle ilgileniyorum. Her iki alanda da kendimi geliştirmeye devam ediyorum."
-              : "I enjoy software development, learning new things and turning ideas into projects. I'm also interested in managing and growing digital communities. I'm continuously developing my skills in both areas."}
+              ? "İstanbul Medipol Üniversitesi'nde Yönetim Bilişim Sistemleri öğrencisiyim. Yazılım geliştirme alanında kendimi geliştiriyor, öğrendiklerimi projelerime aktarıyorum. Bunun yanında dijital toplulukların yönetimi ve ekip organizasyonu konusunda deneyim sahibiyim."
+              : "I'm a Management Information Systems student at Istanbul Medipol University. I'm developing my software skills and putting what I learn into practice through personal projects. I also have experience in managing digital communities and coordinating teams."}
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -86,18 +96,23 @@ export default function PortfolioHome({ locale }: PortfolioHomeProps) {
               <span className="h-2 w-2 rounded-full bg-green-500" />
             </div>
 
-            <div className="my-10 flex justify-center">
-              <div className="flex h-40 w-40 items-center justify-center rounded-full border border-blue-500/30 bg-gradient-to-br from-blue-600/30 to-[#080b12] shadow-[0_0_60px_rgba(37,99,235,0.15)]">
-                <span className="text-6xl font-bold tracking-tighter">
-                  H<span className="text-blue-500">D</span>
-                </span>
-              </div>
+            <div className="my-8 overflow-hidden rounded-2xl border border-white/10">
+              <Image
+                src="/profile.jpg"
+                alt="Hayrullah Demir"
+                width={420}
+                height={520}
+                priority
+                className="h-64 w-full object-cover object-center"
+              />
             </div>
 
             <div className="text-center">
               <h3 className="text-2xl font-bold">Hayrullah Demir</h3>
               <p className="mt-3 text-sm text-blue-400">
-                Software Developer & Community Manager
+                {isTr
+                  ? "Yönetim Bilişim Sistemleri Öğrencisi"
+                  : "Management Information Systems Student"}
               </p>
             </div>
 
@@ -217,12 +232,23 @@ export default function PortfolioHome({ locale }: PortfolioHomeProps) {
               </span>
             </div>
 
+            <div className="mt-7 overflow-hidden rounded-xl border border-white/10 bg-[#0d1422]">
+              <Image
+                src="/portfolio-preview.png"
+                alt="Hayrullah Demir kişisel portfolyo web sitesi"
+                width={1832}
+                height={920}
+                sizes="(max-width: 768px) 100vw, 90vw"
+                className="h-auto w-full object-contain transition duration-500 group-hover:scale-[1.01]"
+              />
+            </div>
+
             <h3 className="mt-7 text-2xl font-bold">Hayrullahdemir.com.tr</h3>
 
             <p className="mt-4 max-w-3xl leading-7 text-gray-400">
               {isTr
-                ? "Kendimi, projelerimi ve yetkinliklerimi tanıtmak için geliştirdiğim kişisel portfolyo web sitesi. Türkçe ve İngilizce dil desteğiyle tasarlıyorum."
-                : "A personal portfolio website I'm building to showcase my background, projects and skills. It features both Turkish and English language support."}
+                ? "Kendimi ve çalışmalarımı tanıtmak için geliştirdiğim kişisel web sitesi. Projelerimi, teknik becerilerimi ve yazılım alanındaki gelişimimi paylaştığım bir platform."
+                : "A personal website I built to introduce myself and showcase my work. A platform where I share my projects, technical skills, and progress in software development."}
             </p>
 
             <div className="mt-7 flex flex-wrap gap-2">
